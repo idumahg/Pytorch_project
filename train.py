@@ -7,6 +7,7 @@ from torch import optim
 import torch.nn.functional as F
 from torchvision import datasets, transforms, models
 from collections import OrderedDict
+import sys
 
 def get_input_args():
     
@@ -16,7 +17,7 @@ def get_input_args():
     
     parser.add_argument('--arch', type = str, default = 'densenet', help = 'CNN model architecture to use')
 #     parser.add_argument('--device', type = str, default = 'gpu', help = 'gpu or cpu')
-    parser.add_argument('--lr', type = int, default = 0.002, help = 'learning rate')
+    parser.add_argument('--lr', type = float, default = 0.002, help = 'learning rate')
     parser.add_argument('--epochs', type = int, default = 5, help = 'number of epochs')
     
     return parser.parse_args()
